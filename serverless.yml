@@ -2,11 +2,11 @@ service: nestjs-on-netlify
 
 provider:
   name: aws
-  runtime: nodejs16.x
+  runtime: nodejs14.x
 
 functions:
-  api:
-    handler: dist/main.handler
+  main:
+    handler: dist/serverless.handler
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
